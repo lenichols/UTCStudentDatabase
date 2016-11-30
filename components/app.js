@@ -6,31 +6,31 @@ import CreateStudent from './create-student';
 const students = [
   {
     name: 'Jasmine Taylor',
-    grade: '8',
+    grade: 8,
     school: 'Franklin',
     isCompleted: false
   },
   {
     name: 'Kevin Parker',
-    grade: '6',
+    grade: 6,
     school: 'Solano',
     isCompleted: true
   },
   {
     name: 'Dominique Hererra',
-    grade: '9',
+    grade: 9,
     school: 'Hogan',
     isCompleted: true
   },
   {
     name: 'Carlos Marquee',
-    grade: '7',
+    grade: 7,
     school: 'Franklin',
     isCompleted: true
   },
   {
     name: 'Rashane Kelly',
-    grade: '6',
+    grade: 6,
     school: 'Solano',
     isCompleted: true
   }
@@ -63,9 +63,11 @@ export default class App extends React.Component {
 
   createNewStudent(student){
     this.state.students.push({
-      student,
+      name: student[0],
+      grade: student[1],
+      school: student[2],
       isCompleted: false
-    });
+    }); //this was the issue
 
     this.setState({ students: this.state.students });
   }
